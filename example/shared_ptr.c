@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "mrb_pointer.h"
 #include "mruby.h"
 #include "mruby/compile.h"
-#include "mrb_pointer.h"
 
 static mrb_value mrb_pter_set(mrb_state *mrb, mrb_value self)
 {
@@ -23,7 +23,8 @@ static mrb_value mrb_pter_get(mrb_state *mrb, mrb_value self)
 
   str = (char *)mrb_ud_ptr_get(mrb);
 
-  return mrb_str_new_cstr(mrb, str);;
+  return mrb_str_new_cstr(mrb, str);
+  ;
 }
 
 const char *pter_set_code = "Pter.set('I am pter')";
@@ -55,4 +56,3 @@ int main(int argc, char *argv[])
 
   return 0;
 }
-

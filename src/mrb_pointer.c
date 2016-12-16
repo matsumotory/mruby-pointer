@@ -6,8 +6,8 @@
 ** See Copyright Notice in LICENSE
 */
 
-#include "mruby.h"
 #include "mrb_pointer.h"
+#include "mruby.h"
 
 typedef struct mrb_ud_struct_t {
 
@@ -56,4 +56,3 @@ void mrb_mruby_pointer_gem_init(mrb_state *mrb)
 void mrb_mruby_pointer_gem_final(mrb_state *mrb)
 {
 }
-
