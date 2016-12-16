@@ -22,7 +22,7 @@ I am pter
 
 ## example
 
-Please see example/
+Please see [example/shared_ptr.c](example/shared_ptr.c)
 
 ## License
 under the MIT License:
