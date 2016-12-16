@@ -11,6 +11,15 @@ MRuby::Build.new do |conf|
     conf.gem :github => 'matsumotory/mruby-pointer'
 end
 ```
+## Run
+
+```
+rake
+make
+./shared_ptr
+I am pter
+```
+
 ## example
 
 Please see example/
