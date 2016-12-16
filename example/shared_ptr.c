@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "mruby.h"
+#include "mruby/compile.h"
+#include "mrb_pointer.h"
+
+static mrb_value mrb_pter_set(mrb_state *mrb, mrb_value self)
+{
+  char *str;
+
+  mrb_get_args(mrb, "z", &str);
+
+  mrb_ud_ptr_set(mrb, (void *)strdup(str));
+
+  return self;
+}
+
+static mrb_value mrb_pter_get(mrb_state *mrb, mrb_value self)
+{
+  char *str;
+
+  str = (char *)mrb_ud_ptr_get(mrb);
+
+  return mrb_str_new_cstr(mrb, str);;
+}
+
+const char *pter_set_code = "Pter.set('I am pter')";
+const char *pter_get_code = "puts Pter.get";
+
+int main(int argc, char *argv[])
+{
+  mrb_state *mrb_src = mrb_open();
+  mrb_state *mrb_dst = mrb_open();
+  struct RClass *pter_src = mrb_define_class(mrb_src, "Pter", mrb_src->object_class);
+  struct RClass *pter_dst = mrb_define_class(mrb_dst, "Pter", mrb_dst->object_class);
+
+  mrb_define_class_method(mrb_src, pter_src, "set", mrb_pter_set, MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb_src, pter_src, "get", mrb_pter_get, MRB_ARGS_NONE());
+
+  mrb_define_class_method(mrb_dst, pter_dst, "set", mrb_pter_set, MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb_dst, pter_dst, "get", mrb_pter_get, MRB_ARGS_NONE());
+
+  mrb_ud_ptr_init(mrb_src);
+
+  mrb_load_string(mrb_src, pter_set_code);
+
+  mrb_ud_ptr_copy(mrb_src, mrb_dst);
+
+  mrb_load_string(mrb_dst, pter_get_code);
+
+  mrb_close(mrb_src);
+  mrb_close(mrb_dst);
+
+  return 0;
+}
+

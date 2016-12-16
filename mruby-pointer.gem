@@ -1,0 +1,6 @@
+name: mruby-pointer
+description: Pointer class
+author: MATSUMOTO Ryosuke
+website: https://github.com/matsumotory/mruby-pointer
+protocol: git
+repository: https://github.com/matsumotory/mruby-pointer.git
