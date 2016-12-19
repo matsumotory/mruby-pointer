@@ -1,4 +1,4 @@
 mruby/
-shared_ptr
-shared_ptr.dSYM
+bintest/shared_ptr
+bintest/shared_ptr.dSYM
 
