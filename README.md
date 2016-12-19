@@ -1,7 +1,7 @@
 # mruby-pointer   [![Build Status](https://travis-ci.org/matsumotory/mruby-pointer.svg?branch=master)](https://travis-ci.org/matsumotory/mruby-pointer)
 
 
-Provide mruby C API which shared pointer between two mrb_states
+Provide mruby C-API which shared pointer between two mrb_states
 
 
 ## install by mrbgems
