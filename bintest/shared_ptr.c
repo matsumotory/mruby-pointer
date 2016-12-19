@@ -12,16 +12,14 @@ static mrb_value mrb_pter_set(mrb_state *mrb, mrb_value self)
 
   mrb_get_args(mrb, "z", &str);
 
-  mrb_udptr_set(mrb, (void *)strdup(str));
+  mrb_udptr_set(mrb, (void *)str);
 
   return self;
 }
 
 static mrb_value mrb_pter_get(mrb_state *mrb, mrb_value self)
 {
-  char *str;
-
-  str = (char *)mrb_udptr_get(mrb);
+  char *str = (char *)mrb_udptr_get(mrb);
 
   return mrb_str_new_cstr(mrb, str);
 }
