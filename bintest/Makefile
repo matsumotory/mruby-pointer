@@ -12,3 +12,6 @@ MRUBY_LIBS=$(shell $(MRUBY_ROOT)/bin/mruby-config --libs)
 
 all:
 	  $(CC) $(MRUBY_POINTER_SRC) $(MRUBY_CFLAGS) $(MRUBY_LDFLAGS) $(MRUBY_LDFLAGS_BEFORE_LIBS) $(MRUBY_LIBS) -o $(MRUBY_POINTER_BIN)
+
+clean:
+	-rm shared_ptr

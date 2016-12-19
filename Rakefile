@@ -20,6 +20,7 @@ end
 desc "cleanup"
 task :clean do
   sh "cd mruby && rake deep_clean"
+  sh "cd bintest && make clean"
 end
 
 task :default => :test
