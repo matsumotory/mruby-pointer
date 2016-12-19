@@ -1,5 +1,9 @@
 # mruby-pointer   [![Build Status](https://travis-ci.org/matsumotory/mruby-pointer.svg?branch=master)](https://travis-ci.org/matsumotory/mruby-pointer)
-Pointer class
+
+
+shared pointer between two mrb_states
+
+
 ## install by mrbgems
 - add conf.gem line to `build_config.rb`
 
@@ -11,18 +15,15 @@ MRuby::Build.new do |conf|
     conf.gem :github => 'matsumotory/mruby-pointer'
 end
 ```
-## Run
+## Test
 
 ```
 rake
-make
-./shared_ptr
-I am pter
 ```
 
 ## example
 
-Please see [example/shared_ptr.c](example/shared_ptr.c)
+Please see [bintest/shared_ptr.c](bintest/shared_ptr.c)
 
 ## License
 under the MIT License:
