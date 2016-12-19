@@ -12,8 +12,9 @@ end
 
 desc "test"
 task :test => :mruby do
+  sh "cd mruby && MRUBY_CONFIG=#{MRUBY_CONFIG} rake"
+  sh "cd bintest && make"
   sh "cd mruby && MRUBY_CONFIG=#{MRUBY_CONFIG} rake all test"
-  sh "make && ./shared_ptr"
 end
 
 desc "cleanup"

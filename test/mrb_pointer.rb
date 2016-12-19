@@ -1,4 +1,0 @@
-##
-## Pointer Test
-##
-
