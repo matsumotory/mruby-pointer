@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
   /* set ptr on mrb_src into the shared ptr object */
   mrb_load_string(mrb_src, pter_set_code);
 
-  /* connect the shared ptr object mrb_src with mrb_dst */
+  /* copy the shared ptr object from mrb_src to mrb_dst */
   mrb_udptr_copy(mrb_src, mrb_dst);
 
   /* get ptr on mrb_src from shared ptr object on mrb_dst */
