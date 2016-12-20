@@ -9,7 +9,7 @@ MRUBY_ROOT=$(MRUBY_POINTER_ROOT)/mruby
 MRUBY_CFLAGS=$(shell $(MRUBY_ROOT)/bin/mruby-config --cflags)
 MRUBY_LDFLAGS=$(shell $(MRUBY_ROOT)/bin/mruby-config --ldflags)
 MRUBY_LDFLAGS_BEFORE_LIBS=$(shell $(MRUBY_ROOT)/bin/mruby-config --ldflags-before-libs)
-MRUBY_LIBS=$(shell $(MRUBY_ROOT)/bin/mruby-config --libs)
+MRUBY_LIBS=$(shell $(MRUBY_ROOT)/bin/mruby-config --libs) -lhiredis
 
 
 all:

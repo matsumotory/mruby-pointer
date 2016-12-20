@@ -14,4 +14,4 @@ before_script:
   - redis-server --port 6379 &
   - redis-server --port 6380 --requirepass 'secret' &
 script:
-  - MRUBY_CONFIG=./build_config.rb rake
+  - rake test
