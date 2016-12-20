@@ -1,4 +1,6 @@
 mruby/
 bintest/shared_ptr
 bintest/shared_ptr.dSYM
+bintest/shared_redis_ctx
+bintest/shared_redis_ctx.dSYM/
 
